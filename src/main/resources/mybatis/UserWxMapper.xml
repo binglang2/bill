@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.banma.bill.repository.mapper.UserWxMapper">
+
+      <!-- 通用查询映射结果 -->
+      <resultMap id="BaseResultMap" type="com.banma.bill.repository.entity.UserWx">
+          <id column="id" property="id"/>
+          <result column="open_id" property="openId"/>
+          <result column="nick_name" property="nickName"/>
+          <result column="sex" property="sex"/>
+          <result column="province" property="province"/>
+          <result column="city" property="city"/>
+          <result column="country" property="country"/>
+          <result column="avatar" property="avatar"/>
+          <result column="privilege" property="privilege"/>
+          <result column="session_key" property="sessionKey"/>
+          <result column="union_id" property="unionId"/>
+          <result column="deleted" property="deleted"/>
+          <result column="create_time" property="createTime"/>
+          <result column="modified_time" property="modifiedTime"/>
+      </resultMap>
+
+      <!-- 通用查询结果列 -->
+      <sql id="Base_Column_List">
+          id,
+          deleted,
+          create_time,
+          modified_time,
+          open_id, nick_name, sex, province, city, country, avatar, privilege, session_key, union_id
+      </sql>
+</mapper>

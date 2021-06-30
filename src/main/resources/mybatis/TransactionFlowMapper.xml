@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.banma.bill.repository.mapper.TransactionFlowMapper">
+
+  <!-- 通用查询映射结果 -->
+  <resultMap id="BaseResultMap" type="com.banma.bill.repository.entity.TransactionFlow">
+    <id column="id" property="id"/>
+    <result column="user_id" property="userId"/>
+    <result column="book_id" property="bookId"/>
+    <result column="amount" property="amount"/>
+    <result column="trans_date" property="transDate"/>
+    <result column="trans_way" property="transWay"/>
+    <result column="trans_type" property="transType"/>
+    <result column="category_id" property="categoryId"/>
+    <result column="remark" property="remark"/>
+    <result column="fixed_id" property="fixedId"/>
+    <result column="deleted" property="deleted"/>
+    <result column="create_time" property="createTime"/>
+    <result column="modified_time" property="modifiedTime"/>
+  </resultMap>
+
+  <!-- 通用查询结果列 -->
+  <sql id="Base_Column_List">
+    id,
+          deleted,
+          create_time,
+          modified_time,
+          user_id, book_id, amount, trans_date, trans_way, trans_type, category_id, remark, fixed_id
+  </sql>
+
+  <insert id="insertBatch" parameterType="java.util.List">
+    insert into transaction_flow
+    ( user_id, book_id, amount, trans_date, trans_way, trans_type, category_id, remark, fixed_id,
+    id)
+    VALUES
+    <foreach collection="list" separator="," item="item">
+      (
+      #{item.userId},
+      #{item.bookId},
+      #{item.amount},
+      #{item.transDate},
+      #{item.transWay},
+      #{item.transType},
+      #{item.categoryId},
+      #{item.remark},
+      #{item.fixedId},
+      null
+      )
+    </foreach>
+  </insert>
+
+</mapper>

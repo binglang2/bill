@@ -1,0 +1,41 @@
+server:
+  port: 8090
+spring:
+  profiles:
+    active: dev
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/bill?Unicode=true&characterEncoding=utf-8&useSSL=false&requireSSL=false
+    username: root
+    password: root2222
+  jackson:
+    time-zone: GMT+8
+    locale: zh
+    date-format: yyyy-MM-dd HH:mm:ss
+
+wx:
+  appid: app-id
+  appsecret: app-secret
+
+jasypt.path: /Users/binglang/codes/java/jasypt.properties
+
+---
+server:
+  port: 8090
+spring:
+  profiles: default, pro, test
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/bill?Unicode=true&characterEncoding=utf-8&useSSL=false&requireSSL=false
+    username: ENC(ElPM8JTgk7fJKFl7K/V8QYbmRzhCmUDvbTbd0nJtR8EBlSWMWkBioEzRp25JifhG)
+    password: ENC(ElPM8JTgk7fJKFl7K/V8QYbmRzhCmUDvbTbd0nJtR8EBlSWMWkBioEzRp25JifhG)
+  jackson:
+    time-zone: GMT+8
+    locale: zh
+    date-format: yyyy-MM-dd HH:mm:ss
+
+wx:
+  appid: app-id
+  appsecret: app-secret
+
+jasypt.path: /root/jasypt.properties

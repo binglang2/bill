@@ -1,0 +1,19 @@
+{
+  "properties": [
+    {
+      "name": "wx.appid",
+      "type": "java.lang.String",
+      "description": "Description for wx.appid."
+    },
+    {
+      "name": "wx.appsecret",
+      "type": "java.lang.String",
+      "description": "Description for wx.appsecret."
+    },
+    {
+      "name": "jasypt.path",
+      "type": "java.lang.String",
+      "description": "Description for jasypt.path."
+    }
+  ]
+}

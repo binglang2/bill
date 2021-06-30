@@ -1,0 +1,27 @@
+package ${package.ServiceImpl};
+
+import ${package.Entity}.${entity};
+import ${package.Mapper}.${table.mapperName};
+import ${superServiceClassPackage};
+import ${superMapperClassPackage};
+import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Repository;
+
+/**
+ *
+ * $!{table.comment} 仓储实现类
+ *
+ * @author ${author}
+ * @since ${date}
+ */
+@Repository
+@RequiredArgsConstructor
+public class ${table.serviceImplName} implements ${superServiceClass}<${entity}> {
+
+    private final ${table.mapperName} mapper;
+
+    @Override
+    public BaseExtendMapper<${entity}> getBaseMapper() {
+        return mapper;
+    }
+}
